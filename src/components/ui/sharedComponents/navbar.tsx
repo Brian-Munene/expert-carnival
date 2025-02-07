@@ -1,31 +1,32 @@
-import React from "react";
 import Link from "next/link";
+import { ModeToggle } from "@/components/ModeToggle";
 
 export default function Navbar() {
   return (
-    <div className=" bg-primary text-primary-foreground">
-      <nav className="container m-auto p-4 flex justify-between items-center">
-        <div className="text-primary-foreground text-2xl">
-          <Link href="/">Name Logo</Link>
-        </div>
-        <ul className="flex space-x-4">
+    <nav className="flex p-6 justify-between items-center">
+      <div className=" text-2xl">
+        <Link href="/">Name Logo</Link>
+      </div>
+      <div className="flex items-center gap-4">
+        <ul className="flex space-x-4 text-xl">
           <li>
-            <Link href="/about" className="text-white hover:underline">
+            <Link href="/about" className="hover:underline">
               About
             </Link>
           </li>
           <li>
-            <Link href="/portfolio" className="text-white hover:underline">
+            <Link href="/portfolio" className="hover:underline">
               Portfolio
             </Link>
           </li>
           <li>
-            <Link href="/contact" className="text-white hover:underline">
+            <Link href="/contact" className="hover:underline">
               Contact Us
             </Link>
           </li>
         </ul>
-      </nav>
-    </div>
+        <ModeToggle />
+      </div>
+    </nav>
   );
 }
