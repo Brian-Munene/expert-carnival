@@ -11,6 +11,10 @@ export const navItems = [
     link: "/portfolio",
   },
   {
+    name: "Blog",
+    link: "/contact",
+  },
+  {
     name: "Contact Us",
     link: "/contact",
   },

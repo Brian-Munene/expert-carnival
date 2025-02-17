@@ -16,15 +16,16 @@ import {
 import { HiMenu, HiX } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
 import { VisuallyHidden } from "@/components/ui/visually-hidden";
+import { navItems } from "./navbar";
 
 export default function MobileNavbar() {
   const [open, setOpen] = useState(false);
 
   // Framer Motion variants for sliding animation
   const slideVariants = {
-    hidden: { x: "-100%" },
-    visible: { x: 0 },
-    exit: { x: "-100%" },
+    hidden: { y: "-100%" },
+    visible: { y: 0 },
+    exit: { y: "-100%" },
   };
 
   return (
@@ -37,13 +38,13 @@ export default function MobileNavbar() {
       <AnimatePresence>
         {open && (
           // Wrap the DialogContent with AnimatePresence and motion.div for animation
-          <DialogContent className="sm:hidden p-0">
-            {/* Provide a title for accessibility. Using VisuallyHidden hides it visually but keeps it for screen readers */}
+          <DialogContent className="sm:hidden flex justify-center fixed  w-5/6 m-auto h-1/2 top-64">
+            {/* Title for accessibility. Using VisuallyHidden hides it visually but keeps it for screen readers */}
             <DialogTitle>
               <VisuallyHidden>Mobile Navigation Menu</VisuallyHidden>
             </DialogTitle>
             <motion.div
-              className="fixed top-20 left-0 w-1/2 h-full bg-secondary text-secondary-foreground p-4 shadow-lg"
+              className="flex justify-center bg-secondary text-secondary-foreground p-4 w-full h-full shadow-lg "
               initial="hidden"
               animate="visible"
               exit="exit"
@@ -52,27 +53,15 @@ export default function MobileNavbar() {
             >
               <NavigationMenu>
                 <NavigationMenuList className="flex flex-col space-y-4">
-                  <NavigationMenuItem>
-                    <NavigationMenuLink asChild>
-                      <Link href="/about" onClick={() => setOpen(false)}>
-                        About
-                      </Link>
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <NavigationMenuLink asChild>
-                      <Link href="/portfolio" onClick={() => setOpen(false)}>
-                        Portfolio
-                      </Link>
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <NavigationMenuLink asChild>
-                      <Link href="/contact" onClick={() => setOpen(false)}>
-                        Contact Us
-                      </Link>
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
+                  {navItems.map((item) => (
+                    <NavigationMenuItem key={item.name}>
+                      <NavigationMenuLink asChild>
+                        <Link href={item.link} onClick={() => setOpen(false)}>
+                          {item.name}
+                        </Link>
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                  ))}
                 </NavigationMenuList>
               </NavigationMenu>
             </motion.div>
