@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { navItems } from "./navbar";
+import QuickLinks from "./quickLinks";
 import { Button } from "../button";
 
 export default function Footer() {
@@ -24,18 +24,7 @@ export default function Footer() {
         {/* Quick Links */}
         <div className="flex flex-col">
           <h2 className="mb-4 text-lg font-semibold">Quick Links</h2>
-          <ul className="space-y-2">
-            {navItems.map((item) => (
-              <li key={item.link}>
-                <Link
-                  href={item.link}
-                  className="hover:underline transition-colors duration-200"
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <QuickLinks />
         </div>
 
         {/* Contact */}
