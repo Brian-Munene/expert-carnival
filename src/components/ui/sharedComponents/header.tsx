@@ -13,13 +13,13 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden sm:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-6">
           <MainMenu />
           <ModeToggle />
         </div>
 
         {/* Mobile Navigation */}
-        <div className="sm:hidden flex items-center gap-4">
+        <div className="md:hidden flex items-center gap-4">
           <ModeToggle />
           <MobileNavbar />
         </div>
