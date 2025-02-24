@@ -3,6 +3,8 @@ import QuickLinks from "./quickLinks";
 import { Button } from "../button";
 
 export default function Footer() {
+  const date = new Date();
+  const currentDate = date.getFullYear();
   return (
     <footer className="container mx-auto px-4 py-8 sm:py-16 space-y-8">
       <section className="flex flex-col gap-6 bg-accent text-accent-foreground p-8 sm:grid sm:grid-cols-3">
@@ -45,10 +47,7 @@ export default function Footer() {
 
       {/* Bottom Copyright */}
       <section className="text-center text-sm text-muted-foreground">
-        <p>
-          &copy; {new Date().getFullYear()} WebWeave Studio. All rights
-          reserved.
-        </p>
+        <p>&copy; {currentDate} WebWeave Studio. All rights reserved.</p>
       </section>
     </footer>
   );

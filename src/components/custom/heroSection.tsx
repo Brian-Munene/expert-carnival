@@ -18,7 +18,7 @@ export default function HeroSection() {
           </h1>
 
           {/* Introductory paragraph */}
-          <p className="mt-4 sm:text-lg  text-muted-foreground">
+          <p className="mt-4 md:text-lg  text-muted-foreground">
             Forget page builders and generic WordPress templates. We deliver
             entirely custom, hand-coded websites that drive superior
             performance—starting at just $175/month. Plus, explore our
