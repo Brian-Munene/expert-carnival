@@ -16,6 +16,10 @@ type NavItem = {
 // Navigation items
 export const navItems: NavItem[] = [
   {
+    name: "Home",
+    link: "/",
+  },
+  {
     name: "About",
     link: "/about",
   },

@@ -5,7 +5,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="pb-20 bg-background"
+      className="py-20 bg-background"
       aria-label="Our Services"
     >
       <div className="container mx-auto px-4">
